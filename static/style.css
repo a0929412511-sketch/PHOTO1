@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap');
+
+:root{font-family:Manrope,"Noto Sans TC",sans-serif;color:#3d302e;background:#fbf6ed;font-synthesis:none;--muted:#92837b;--line:#eadfd1;--pink:#f17d82;--cream:#fffdf8}
+*{box-sizing:border-box}
+html,body{width:100%;height:100%;margin:0;overflow:hidden}
+body{height:100dvh;min-height:0;padding:clamp(6px,1.4vh,14px) clamp(7px,1.6vw,24px);background:radial-gradient(ellipse at 70% 8%,#fae1d9 0,transparent 36%),#fbf6ed}
+.app-shell{width:min(1340px,100%);height:100%;min-height:0;margin:0 auto;display:flex;flex-direction:column;overflow:hidden}
+.topbar{flex:none;display:flex;align-items:center;justify-content:space-between;margin-bottom:clamp(5px,1vh,12px)}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand img{width:clamp(34px,5vh,56px);height:clamp(34px,5vh,56px);object-fit:cover;border-radius:50%;border:3px solid white;box-shadow:0 4px 16px #d99c8a40}
+.eyebrow{font:500 10px "DM Mono",monospace;letter-spacing:.16em;color:#b38a79;margin:0 0 4px}
+.brand h1{font-size:clamp(17px,2.8vh,29px);letter-spacing:-.04em;margin:0}
+.live-pill{display:flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid var(--line);border-radius:999px;background:#fffaf2;color:#79695f;font-size:11px}
+.live-pill span{width:8px;height:8px;border-radius:50%;background:#90b8a4;box-shadow:0 0 0 4px #90b8a426}
+.workspace{flex:1;min-height:0;display:grid;grid-template-columns:minmax(280px,.78fr) minmax(0,1.45fr);gap:clamp(6px,1.2vw,16px)}
+.camera-panel,.gallery-panel{min-width:0;min-height:0;overflow:hidden;background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:clamp(8px,1.7vh,16px);box-shadow:0 14px 50px #74563c0b}
+.camera-panel{display:flex;flex-direction:column}
+.panel-heading,.gallery-heading{flex:none;display:flex;justify-content:space-between;align-items:center;margin-bottom:clamp(5px,1vh,10px)}
+.panel-heading h2,.gallery-heading h2{font-size:clamp(13px,2vh,19px);letter-spacing:-.03em;margin:0}
+.camera-badge{font:clamp(8px,1.25vh,11px) "DM Mono",monospace;color:#8d7770;background:#f6eee6;padding:6px 8px;border-radius:999px}
+.camera-stage{position:relative;flex:none;width:100%;aspect-ratio:16/10;overflow:hidden;border-radius:13px;background:linear-gradient(145deg,#f3e9dc,#e8ddd0);border:1px solid #eee2d4}
+.camera-stage video,.camera-stage canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}
+.camera-stage canvas{pointer-events:none}
+.placeholder{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:6px;color:#8e7770;padding:10px}
+.placeholder img{width:clamp(35px,6vh,64px);height:clamp(35px,6vh,64px);border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 5px 15px #8c625330}
+.placeholder strong{font-size:clamp(9px,1.5vh,13px);color:#594642}.placeholder span{font-size:clamp(8px,1.2vh,11px)}
+.camera-toggle{flex:none;width:100%;margin:clamp(5px,1vh,9px) 0;padding:clamp(6px,1.3vh,10px);border:0;border-radius:9px;background:#53403b;color:#fffaf3;font:700 clamp(9px,1.6vh,13px) Manrope,"Noto Sans TC",sans-serif;cursor:pointer}
+.camera-toggle:hover{background:#70554e}.camera-toggle:disabled{opacity:.6}
+.gesture-guide{flex:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(3px,.7vw,10px);padding:clamp(5px,1vh,9px);border:1px solid #f0e4d8;border-radius:12px;background:#fffaf4}
+.guide-title{grid-column:1/-1;font-size:clamp(9px,1.4vh,12px);font-weight:800;margin:0 0 3px}
+.gesture-row{min-width:0;display:grid;grid-template-columns:clamp(16px,2.8vh,22px) minmax(0,1fr);align-items:center;gap:3px;padding:clamp(2px,.45vh,4px) 0;border-top:1px solid #f3eae1;color:#756660;font-size:clamp(7px,1.15vh,10px);line-height:1.2}
+.gesture-row b{grid-column:2;justify-self:start;margin-top:-1px;padding:2px 5px;border-radius:999px;background:#fdece8;color:#bd6b6b;font-size:clamp(6px,.95vh,9px);line-height:1.2}
+.gesture-icon,.finger-icon{grid-row:span 2;display:grid;place-items:center;width:clamp(16px,2.8vh,22px);height:clamp(16px,2.8vh,22px);border:1px solid #f0e2d7;border-radius:7px;background:#fff;color:#a66b64;font-size:clamp(10px,1.7vh,13px)}
+.status{flex:none;min-height:0;margin:5px 1px 0;color:#9a8b82;font-size:clamp(7px,1.1vh,10px);line-height:1.25}
+.gallery-panel{display:flex;flex-direction:column}
+.gallery-heading{margin-bottom:clamp(5px,1vh,10px)}
+.gallery-title{min-width:0;max-width:calc(100% - 52px)}
+#photo-title{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow-wrap:anywhere}
+.counter{display:flex;align-items:baseline;gap:7px;color:#ad9c91;font:13px "DM Mono",monospace}.counter strong{font-size:clamp(17px,3vh,25px);color:#4c3e3a}
+.photo-frame{position:relative;isolation:isolate;flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #f0e5d9;border-radius:14px;background:#f5eee7}
+#photo{display:block;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;object-position:center;transition:transform .35s ease}
+#photo.flipped{transform:scaleX(-1)}
+#photo.zoomed{transform:scale(1.45)}
+#photo.flipped.zoomed{transform:scaleX(-1) scale(1.45)}
+.photo-caption{position:absolute;left:clamp(6px,1vw,14px);right:clamp(6px,1vw,14px);bottom:clamp(6px,1vw,13px);display:flex;align-items:center;justify-content:space-between;background:#fffdf0e8;backdrop-filter:blur(9px);border:1px solid #ffffffbd;border-radius:10px;padding:clamp(6px,1vw,11px) clamp(8px,1.2vw,14px);font-size:clamp(9px,1.6vh,13px);font-weight:700;color:#53403b}
+.photo-mark{color:#e9a874;font-size:18px}
+.pink-bubbles,.lightning-effects{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.pink-bubbles{z-index:2}.pink-bubble{position:absolute;left:var(--x);bottom:18%;width:var(--size);height:var(--size);border:1px solid #fff9;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff9 0 9%,#ffa8c8d9 30%,#ef76a9c9 100%);box-shadow:inset -2px -3px 5px #d84d8652,0 3px 12px #e86a9c55;animation:bubble-float 1.25s cubic-bezier(.18,.65,.3,1) var(--delay) forwards}
+@keyframes bubble-float{0%{opacity:0;transform:translate3d(-50%,10px,0) scale(.35)}18%{opacity:.95}75%{opacity:.85}100%{opacity:0;transform:translate3d(calc(-50% + 16px),-210px,0) scale(1.2)}}
+.lightning-effects{z-index:3;opacity:0;background:transparent}.lightning-effects.active{animation:lightning-flash .78s steps(1,end) both}
+.lightning-bolt{position:absolute;left:var(--x);top:var(--y);width:42px;height:92px;opacity:0;transform:translate(-50%,-50%) scale(var(--scale));clip-path:polygon(57% 0,18% 54%,43% 54%,29% 100%,83% 39%,56% 39%);background:linear-gradient(145deg,#fffef0 4%,#ffe778 42%,#ff9dcb 100%);filter:drop-shadow(0 0 9px #fff);animation:bolt-strike .65s ease-out var(--delay) both}
+.lightning-bolt:nth-child(2){width:34px;height:74px}.lightning-bolt:nth-child(3){width:29px;height:64px}
+@keyframes lightning-flash{0%,100%{opacity:0;background:transparent}12%{opacity:1;background:#fff8d66e}19%{opacity:.1;background:transparent}28%{opacity:.75;background:#fff8d644}38%{opacity:0;background:transparent}}
+@keyframes bolt-strike{0%,100%{opacity:0}18%,42%{opacity:1}58%{opacity:.18}72%{opacity:1}}
+.thumbs{flex:none;display:flex;gap:8px;min-height:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;padding:2px 1px 3px;margin:clamp(4px,.8vh,8px) 0}.thumbs::-webkit-scrollbar{display:none}
+.thumb{position:relative;flex:0 0 clamp(40px,7vh,62px);width:clamp(40px,7vh,62px);height:clamp(31px,5.6vh,48px);padding:0;border:2px solid transparent;border-radius:9px;overflow:hidden;background:#f3e8dd;cursor:pointer}
+.thumb.active{border-color:var(--pink);box-shadow:0 0 0 3px #f17d8226}.thumb img{display:block;width:100%;height:100%;object-fit:contain;background:#f5eee7}.thumb span{position:absolute;right:3px;bottom:2px;border-radius:4px;padding:1px 4px;background:#fffdf0e8;color:#604b44;font:9px "DM Mono",monospace}
+.gallery-controls{flex:none;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(3px,.8vw,14px)}.gallery-controls button{cursor:pointer;font-family:inherit}
+.secondary{display:flex;align-items:center;gap:4px;justify-self:start;border:1px solid var(--line);background:#fffdf8;border-radius:9px;color:#75645d;padding:clamp(5px,.9vh,10px) clamp(5px,.8vw,12px);font-size:clamp(8px,1.4vh,12px)}.secondary:last-child{justify-self:end}.secondary:hover{background:#fff4ed}.secondary:disabled,.round:disabled{opacity:.38;cursor:default}
+.step-buttons{display:flex;gap:6px}.round{width:clamp(30px,5.5vh,42px);height:clamp(30px,5.5vh,42px);border:1px solid var(--line);border-radius:50%;background:#fffdf8;color:#6e5b54;font-size:16px}.round.primary{border-color:var(--pink);background:var(--pink);color:white;box-shadow:0 5px 12px #f17d8245}.round:not(:disabled):hover{transform:translateY(-1px)}
+.keyboard-hint{flex:none;text-align:center;color:#aa9a91;font-size:clamp(7px,1vh,10px);margin:4px 0 0}footer{display:none}
+@media(max-width:680px){body{padding:5px}.topbar{margin-bottom:4px}.brand{gap:6px}.brand img{width:30px;height:30px}.brand .eyebrow{display:none}.brand h1{font-size:14px}.live-pill{font-size:0;padding:6px}.live-pill span{width:7px;height:7px}.workspace{grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr);gap:5px}.camera-panel,.gallery-panel{padding:5px;border-radius:12px}.panel-heading,.gallery-heading{margin-bottom:4px}.camera-panel .panel-heading h2,.gallery-heading h2{font-size:11px}.camera-badge{font-size:7px;padding:3px 4px}.camera-stage{aspect-ratio:1/1}.camera-toggle{margin:4px 0;padding:5px 2px;font-size:8px}.gesture-guide{column-gap:2px;padding:3px}.guide-title{font-size:8px}.gesture-row{grid-template-columns:13px minmax(0,1fr);gap:2px;font-size:6.5px}.gesture-row b{display:none}.gesture-icon,.finger-icon{width:13px;height:15px;font-size:8px}.status{font-size:6.5px;line-height:1.15}.photo-frame{border-radius:9px}.photo-caption{font-size:8px;padding:4px 6px}.thumbs{gap:4px}.thumb{flex-basis:35px;width:35px;height:28px}.secondary span{display:none}.secondary{font-size:9px;padding:5px}.round{width:27px;height:27px}.step-buttons{gap:3px}.keyboard-hint{display:none}}
+@media(max-height:500px){.topbar{margin-bottom:2px}.brand img{width:26px;height:26px}.panel-heading,.gallery-heading{margin-bottom:2px}.camera-stage{aspect-ratio:16/8}.camera-toggle{margin:2px 0;padding:4px}.gesture-guide{padding:2px 4px}.gesture-row{padding:1px 0}.status{display:none}.thumbs{margin:2px 0}.keyboard-hint{display:none}}

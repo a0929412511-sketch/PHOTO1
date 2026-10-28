@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf6ed">
+  <title>小胖子的手勢相簿</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v='20261028-11') }}">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand"><img src="{{ url_for('static', filename='gallery/avatar.png') }}" alt="小胖子頭像"><div><p class="eyebrow">GESTURE PHOTO ALBUM</p><h1>小胖子的手勢相簿</h1></div></div>
+      <div class="live-pill"><span></span>即時手勢控制</div>
+    </header>
+    <section class="workspace">
+      <aside class="camera-panel">
+        <div class="panel-heading"><div><p class="eyebrow">01 / CAMERA</p><h2>手勢控制區</h2></div><span id="badge" class="camera-badge">尚未啟動</span></div>
+        <div class="camera-stage">
+          <video id="camera" autoplay playsinline muted></video>
+          <canvas id="overlay"></canvas>
+          <div id="placeholder" class="placeholder"><img src="{{ url_for('static', filename='gallery/avatar.png') }}" alt="小胖子小圖示"><strong>嗨！準備好一起看照片了嗎？</strong><span>啟動攝影機，試著移動手掌</span></div>
+        </div>
+        <button id="toggle" class="camera-toggle" type="button"><span>◉</span> 啟動攝影機</button>
+        <div class="gesture-guide">
+          <p class="guide-title">手勢小抄</p>
+          <div class="gesture-row"><span class="gesture-icon">←</span><span>手掌往左</span><b>上一張</b></div>
+          <div class="gesture-row"><span class="gesture-icon">→</span><span>手掌往右</span><b>下一張</b></div>
+          <div class="gesture-row"><span class="finger-icon">☝</span><span>只伸食指</span><b>回到第一張</b></div>
+          <div class="gesture-row"><span class="finger-icon">☟</span><span>只伸小指</span><b>跳到最後</b></div>
+          <div class="gesture-row"><span class="finger-icon">↻</span><span>手心／手背翻轉</span><b>圖片左右翻轉</b></div>
+          <div class="gesture-row"><span class="finger-icon">👍</span><span>雙手比讚</span><b>回到第一頁</b></div>
+          <div class="gesture-row"><span class="finger-icon">〰</span><span>張掌左右揮動</span><b>出現閃電</b></div>
+          <div class="gesture-row"><span class="finger-icon">✊</span><span>握拳再展開</span><b>圖片放大</b></div>
+        </div>
+        <p id="status" class="status" role="status">允許攝影機權限即可開始，或使用右側按鈕操作。</p>
+      </aside>
+
+      <section class="gallery-panel" aria-label="圖片展示">
+        <div class="gallery-heading"><div class="gallery-title"><h2 id="photo-title">載入圖片中…</h2></div><div class="counter"><strong id="current">01</strong><span>/</span><span id="total">02</span></div></div>
+        <div class="photo-frame"><img id="photo" src="{{ url_for('static', filename='gallery/avatar.png') }}" alt="小胖子大頭貼"><div id="pink-bubbles" class="pink-bubbles" aria-hidden="true"></div><div id="lightning-effects" class="lightning-effects" aria-hidden="true"></div></div>
+        <div class="thumbs" id="thumbs" aria-label="圖片縮圖"></div>
+        <div class="gallery-controls">
+          <button id="first" class="secondary" type="button" aria-label="第一張">|‹ <span>第一張</span></button>
+          <div class="step-buttons"><button id="previous" class="round" type="button" aria-label="上一張">←</button><button id="next" class="round primary" type="button" aria-label="下一張">→</button></div>
+          <button id="last" class="secondary" type="button" aria-label="最後一張"><span>最後一張</span> ›|</button>
+        </div>
+        <p class="keyboard-hint">也可以使用鍵盤 ← → 切換照片</p>
+      </section>
+    </section>
+    <footer>攝影機畫面僅在此瀏覽器即時辨識，不會上傳。手勢辨識採用 MediaPipe Hand Landmarker。</footer>
+  </main>
+  <script type="module" src="{{ url_for('static', filename='app.js', v='20261028-13') }}"></script>
+</body>
+</html>
