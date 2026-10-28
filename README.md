@@ -49,4 +49,4 @@ Python 伺服器套件（`requirements.txt`）：
 - `@mediapipe/tasks-vision@0.10.34`：手部關鍵點偵測與 WASM 執行環境
 - Hand Landmarker 模型檔：從 Google Cloud Storage 載入
 
-本機及 Render 安裝指令：`python -m pip install -r requirements.txt`（Render Blueprint 使用 `pip install -r requirements.txt`）。套件版本已確認為 PyPI 發佈版本，專案以 `main.py` 作為 Flask 應用程式入口，不需另外建置 Python 套件。
+本機及 Render 安裝指令：`python -m pip install -r requirements.txt`（Render Blueprint 使用 `pip install -r requirements.txt`）。套件版本已確認為 PyPI 發佈版本；`app.py` 提供 Gunicorn WSGI 入口，Flask 路由實作位於 `main.py`。
